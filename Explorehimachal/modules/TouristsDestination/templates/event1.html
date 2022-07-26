@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Explore Himachal</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<!-- Favicons -->
+	<link href="{{ url_for('touristdestination.static', filename='assets/img/hero-img.png') }}" rel="icon">
+
+	<link rel="stylesheet" href="{{ url_for('touristdestination.static', filename='assets/css/camera.css') }}">
+	<link rel="stylesheet" href="{{ url_for('touristdestination.static', filename='assets/css/owl.carousel.css') }}">
+	<link rel="stylesheet" href="{{ url_for('touristdestination.static', filename='assets/css/style1.css') }} ">
+
+
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery-migrate-1.2.1.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/script.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/superfish.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery.ui.totop.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery.equalheights.js') }} "></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery.mobilemenu.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/jquery.easing.1.3.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/owl.carousel.js') }}"></script>
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/camera.js') }}"></script>
+
+
+	<link href=" {{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}">
+
+
+	<link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+
+	<link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+	<!--[if (gt IE 9)|!(IE)]><!-->
+	<script
+		src="{{ url_for('touristdestination.static', filename='assets/js/jquery.mobile.customized.min.js')}}"></script>
+    <style>
+		.icon-box i{font-size:40px;}
+	</style>
+	<!--<![endif]-->
+	<script>
+		$(document).ready(function () {
+			jQuery('#camera_wrap').camera({
+				loader: false,
+				pagination: false,
+				minHeight: '444',
+				thumbnails: false,
+				height: '48.375%',
+				caption: true,
+				navigation: true,
+				fx: 'mosaic'
+			});
+			/*carousel*/
+			var owl = $("#owl");
+			owl.owlCarousel({
+				items: 2, //10 items above 1000px browser width
+				itemsDesktop: [995, 2], //5 items between 1000px and 901px
+				itemsDesktopSmall: [767, 2], // betweem 900px and 601px
+				itemsTablet: [700, 2], //2 items between 600 and 0
+				itemsMobile: [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+				navigation: true,
+				pagination: false
+			});
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+
+	<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+			</a>
+		</div>
+		<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+</head>
+
+<body>
+	<!--==============================header=================================-->
+	<!-- start banner Area -->
+	<div class="section1 banner-area" id="home">
+		<!-- Start Header Area -->
+		<header class="default-header">
+			<p></p>
+			<div class="row">
+				<div class="col-7 col-md-4">
+					<h1 class="headTitle" style="text-align: center;"><a style="color: aliceblue;" href="/">Explore
+							Himachal<span>.</span></a></h1>
+				</div>
+				<div class="col-5 col-md-8">
+					<nav class="navbar navbar-expand-lg  navbar-light">
+						<div class="container">
+							<button class="navbar-toggler" type="button" data-toggle="collapse"
+								data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+								aria-expanded="false" aria-label="Toggle navigation">
+								<span class="text-white lnr lnr-menu"></span>
+							</button>
+
+							<div class="collapse navbar-collapse justify-content-end align-items-center"
+								id="navbarSupportedContent">
+								<ul class="navbar-nav">
+
+
+									<!-- Uncomment below if you prefer to use an image logo -->
+									<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+									<li><a href="/home">HOME</a></li>
+									<li><a href="/home#Learn">REACH</a></li>
+									<li><a href="/home#services">EVENTS</a></li>
+									<li><a href="/home#Footer">ABOUT</a></li>
+									<li><a href="/home#analytics">CONTACT</a></li>
+									<li><a href="/touristdestination">Explore</a></li>
+
+									{% if loggedIn and type == "user" %}
+									<li class="dropdown">
+										<a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+											Hello {{firstname}}
+										</a>
+										<div class="dropdown-menu" style="background: #222;">
+											<a class="dropdown-item" href="/user/profile"></a>
+											<a class="dropdown-item" href=""></a>
+											<a class="dropdown-item" href=""></a>
+											<a class="dropdown-item" href="/user/signout"></a>
+										</div>
+									</li>
+								</ul>
+								{% elif loggedIn and (type == "admin" or type == "superadmin") %}
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+										Hello {{firstname}}
+									</a>
+									<div class="dropdown-menu" style="background: #222;">
+										<a class="dropdown-item" href="/user/profile"></a>
+										<a class="dropdown-item" href="/touristdestination/addDestination/new">Add
+											Destination</a>
+										<a class="dropdown-item" href=""></a>
+										<a class="dropdown-item" href=""></a>
+										<a class="dropdown-item" href="/user/signout"></a>
+									</div>
+								</li>
+								</ul>
+								{% else %}
+								</ul>
+								<a href="/user/login" class=""></a>
+								{% endif %}
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<!-- End Header Area -->
+	</div>
+	<div class="page1" id="top">
+		<div class="slider_wrapper">
+			<div id="camera_wrap" class="">
+				<div
+					data-src="{{ url_for('touristdestination.static', filename='assets/img/Cities/k1.jpg') }}">
+				</div>
+				<div
+					data-src="{{ url_for('touristdestination.static', filename='assets/img/Cities/k2.jpg') }}">
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="Accommodations" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">KARERI LAKE TREK</h2>
+          <p data-aos="fade-in"></p>
+        </div>
+		  <div class="row">
+			  <div class="col-md-1 icon-box" data-aos="fade-up">
+				  </div>
+			  <div class="col-md-2 icon-box" data-aos="fade-up">
+				  <i class="bi bi-phone"></i>
+				  <h5>Mobile</h5>
+				  </div>
+			   <div class="col-md-2 icon-box" data-aos="fade-up">
+				   <i class="bi bi-person-check"></i>
+				    <h5>Guide</h5>
+				  </div>
+			   <div class="col-md-2 icon-box" data-aos="fade-up">
+				   <i class="bi bi-cup-straw"></i>
+				    <h5>Meals</h5>
+				  </div>
+			   <div class="col-md-2 icon-box" data-aos="fade-up">
+				   <i class="bi bi-bandaid"></i>
+				    <h5>First Aid</h5>
+				  </div>
+			  <div class="col-md-2 icon-box" data-aos="fade-up">
+				  <i class="bi bi-pin-map-fill"></i>
+				   <h5>Trekking Km</h5>
+				  </div>
+			   <div class="col-md-1 icon-box" data-aos="fade-up">
+				  </div>
+			  </div>
+		   <div class="row"></div>
+		   <div class="row"></div>
+		   <div class="row"></div>
+		  <br/>
+		   <br/>
+		   <br/> <br/>
+        <div class="row">
+         <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <strong>Kareri Lake Trek Highlights</strong>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        1. Trek through the splendid vistas of forests, grasslands, streams and
+		  lakes to reach the perfect elliptical glacial Kareri lake.</br>
+
+         2. Soak in nature's bounty at Kareri Lake - a freshwater
+		  lake rugged amidst mountains and surrounded by lush subtropical forests and alpine grasslands.</br>
+
+		 3. Take the path less
+		  travelled as you trek through the offbeat Kareri Lake with an experienced and friendly guide</br>
+
+		 4. Trek to an altitude of 9,650 ft. through the lush green forest of chirr and chilgoza pines.</br>
+
+         5. Sleep under the stars listening to stories from local villagers as you
+		  enjoy the simplicity of life away from the bustling cities.</br>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       <strong> Kareri Lake Trek Overview</strong>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <ul class="list-group">
+		  <li class="list-group-item"><strong>Date:</strong> 12-06-2022 to 13-06-2022 </li>
+		   <li class="list-group-item"><strong>Total Price:</strong> INR 2500 per Person </li>
+          <li class="list-group-item"><strong>Pick & Drop :</strong> kareri Village</li>
+         <li class="list-group-item"><strong>Kareri Lake Trek Height :</strong> 9,650 </li>
+         <li class="list-group-item"><strong>Temperature :</strong>  8°C to 20°C</li>
+          <li class="list-group-item"><strong>Kareri Lake Trek Distance :</strong> 16 KM </li>
+		  <li class="list-group-item"><strong>Guide:</strong> 1 </li>
+		   <li class="list-group-item"><strong>Meals:</strong> Included </li>
+		   <li class="list-group-item"><strong> Trek Time:</strong>5-6hour </li>
+		  <li class="list-group-item"><strong>Stay :</strong> Camp </li>
+		  <li class="list-group-item"><strong>Time:</strong> 2 Day & 1 Night </li>
+		  <li class="list-group-item"><strong>First Aid Kit:</strong> Paracetamol,Oxygen cylinder,Gulcose,Bandage </li>
+</ul>
+    </div>
+  </div>
+</div>
+        </div>
+
+      </div>
+<div class="container">
+	<div class="row align-items-start">
+    <div class="col-8">
+		<p class="fw-bold text-center" style="margin:20px">Send us a Message, we will connect you shortly.</p>
+      <div class="container">
+
+<div class="no-padding loginBox">
+	 <form action="/touristdestination/submitForm" method="POST">
+  <label for="exampleFormControlInput1"  class="form-label">Your Name</label>
+  <input type="text" class="form-control" id="fname" name="fname" placeholder="Your Name">
+</div>
+		<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@gmail.com">
+</div>
+		<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Phone</label>
+  <input type="text" onkeypress="return onlyNumberKey(event)"  maxlength="10" class="form-control" id="exampleFormControlInput11" name="phone" placeholder="Phone Number">
+</div>
+		<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">No of Person</label>
+  <input type="text" onkeypress="return onlyNumberKey(event)"  maxlength="9" class="form-control" id="exampleFormControlInput12" name="person" placeholder="No of Person">
+</div>
+		<div class="mb-3">
+  <input type="hidden" class="form-control" id = "trek" name="trekname" value="KARERI LAKE TREK" />
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+	</div>
+	 <div class="mb-3">
+		 <div class="center">
+	<input class="btn btn-warning" type="submit" name="" value="Submit" onclick="alert('Thank you! for your request')">
+</div>
+</form>
+       </div>
+</div>
+    </div>
+    <div class="col-4">
+
+		<div class="card" style="margin-top:100px">
+  <img src="{{ url_for('touristdestination.static', filename='assets/img/qrcode.png') }}" class="card-img-top" alt="...">
+  <div style="padding: 30px;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%)";>
+    <h5 class="card-title">Scan the Qr Code</h5>
+    <p class="card-text">Scan the Qr code from you phone to make Payment!!!</p>
+
+  </div>
+</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+    </section><!-- End Services Section -->
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="footer-top">
+			<div class="" style="text-align: center;height: 275px;">
+				<img src="{{ url_for('static', filename='assets/img/hero-img2.png') }}" class="img-fluid" alt=""
+					height="250px" width="250px">
+			</div>
+			<div class="container">
+				<div class="row  justify-content-center">
+					<div class="col-lg-6" data-aos="fade-in" style="font-family: Times New Roman;">
+						<h5>A Journey Of A Thousand Miles Begins With A Single Step</h5>
+					</div>
+				</div>
+
+				<div class="social-links">
+					<a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+					<a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+					<a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+					<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+					<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container footer-bottom clearfix">
+			<div class="copyright">
+				&copy; Copyright <strong><span>Explore Himachal</span></strong>. All Rights Reserved
+			</div>
+			<div class="credits">
+				<!-- All the links in the footer should remain intact. -->
+				<!-- You can delete the links only if you purchased the pro version. -->
+				<!-- Licensing information: https://bootstrapmade.com/license/ -->
+				<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/ -->
+				Designed by <a href="/home#contact">Aseem , Karan , Archit</a>
+			</div>
+		</div>
+	</footer><!-- End Footer -->
+	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+
+
+	<script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+	<script src="{{ url_for('touristdestination.static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>

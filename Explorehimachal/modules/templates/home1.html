@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Explore Himachal</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="google-site-verification" content="_QDxrC2YHX8d8u3uxzNVFTGdlboGuZMpN0owDgIu9HE" />
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='assets/img/hero-img1.png') }}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+
+  <!-- Vendor CSS Files -->
+
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+
+  <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/css/main.css') }}" rel="stylesheet">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+  <!--
+    			CSS
+    			============================================= -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/linearicons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/magnific-popup.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.carousel.css') }}">
+  <!-- =======================================================
+  * Template Name: Bocor - v4.7.0
+  * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- start banner Area -->
+  <div class="section1 banner-area" id="home">
+    <!-- Start Header Area -->
+    <header class="default-header">
+      <p></p>
+      <div class="row">
+        <div class="col-7 col-md-4">
+          <h1 class="headTitle" style="text-align: center;"><a href="/">Explore Himachal<span>.</span></a></h1>
+        </div>
+        <div class="col-5 col-md-8">
+          <nav class="navbar navbar-expand-lg  navbar-light">
+            <div class="container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="text-white lnr lnr-menu"></span>
+              </button>
+
+              <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+
+
+                  <!-- Uncomment below if you prefer to use an image logo -->
+                  <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+                  <li><a href="">Home</a></li>
+                  <li><a href="#Learn">REACH</a></li>
+                  <li><a href="/touristdestination/event">Events</a></li>
+                  <li><a href="#Footer">ABOUT</a></li>
+                  <li><a href="#analytics">CONTACT</a></li>
+
+
+                  <li><a href="/touristdestination">Explore</a></li>
+
+                  {% if loggedIn and type == "user" %}
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+                      Hello {{firstname}}
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/user/profile">My Profile</a>
+                      <a class="dropdown-item" href="">My Plans</a>
+                      <a class="dropdown-item" href="">My Reviews</a>
+                      <a class="dropdown-item" href="/user/signout">Log Out</a>
+                    </div>
+                  </li>
+                </ul>
+                {% elif loggedIn and (type == "admin" or type == "superadmin") %}
+                <li class="dropdown">
+                  <a class="dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
+                    Hello {{firstname}}
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/user/profile"></a>
+                    <a class="dropdown-item" href="/touristdestination/addDestination/new"></a>
+                    <a class="dropdown-item" href=""></a>
+                    <a class="dropdown-item" href=""></a>
+                    <a class="dropdown-item" href="/user/signout"></a>
+                  </div>
+                </li>
+                </ul>
+                {% else %}
+                </ul>
+                <a href="/user/login" class=""></a>
+                {% endif %}
+              </div>
+            </div>
+          </nav>
+          <p></p>
+        </div>
+      </div>
+    </header>
+    <!-- End Header Area -->
+
+  </div>
+
+  <div class="section1 default-banner active-blog-slider">
+
+    <div class="item-slider relative" style="background: url(../static/assets/img/slider1.jpg);background-size: cover;">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">Welcome To</h4>
+              <h1 class="text-uppercase text-white">देव भूमि हिमाचल</h1>
+              <p class="text-white"> <br>
+              </p>
+              <a href="/touristdestination/explore" class="text-uppercase header-btn">Discover Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="item-slider relative" style="background: url(../static/assets/img/slider9.jpg);background-size: cover;">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">Discover the Colorful World</h4>
+              <h1 class="text-uppercase text-white">THE LAND OF GOD'S</h1>
+              <p class="text-white"> <br>
+              </p>
+              <a href="/touristdestination/explore" class="text-uppercase header-btn">Discover Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-slider relative" style="background: url(../static/assets/img/slider3.jpg);background-size: cover;">
+      <div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-md-10 col-12">
+            <div class="banner-content text-center">
+              <h4 class="text-white mb-20 text-uppercase">Explore Himachal Is Wating For You</h4>
+              <h1 class="text-uppercase text-white"> हिमाचल प्रदेश</h1>
+              <p class="text-white"> <br>
+              </p>
+              <a href="/touristdestination/explore" class="text-uppercase header-btn">Discover Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <!-- ======= how to reach Section ======= -->
+    <section id="Learn" class="about section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-12 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3 data-aos="fade-in" data-aos-delay="100">How To Reach Himachal Pradesh</h3>
+              <p data-aos="fade-in">
+                Graced by sacred peaks, captivating river valleys, crystal clear mountain lakes and deep forests country,
+                Himachal Pradesh is a playground for the Gods and humans alike.  </p>
+               <p data-aos="fade-in">
+                On the border with Tibet-China in the east, flanked by Jammu & Kashmir in the north west, Uttarakhand in
+                south-east and the mighty plains of Punjab and Haryana in the west, Himachal is the heart throb of
+                North-Western Himalayas  </p>
+                <p data-aos="fade-in">
+                Be there any mountains adventure like trekking,rafting,skling,paragliding or mountaineering, if it is
+                not in Himachal, you won't find elsewhere in the country. Amidst a largely rural charm, Shimla, Manali
+                and Dharamshala are among the country's best tourist destinations.  </p>
+                <p data-aos="fade-in">
+                Five airports,an extensive network of highways criss-crossing the state and broad gauge train stations
+                at Kalka,Una and Pathankot provide easy accessibilty to and within Himachal Pradesh.
+
+              </p>
+              <div class="row">
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="bx bxs-plane-take-off"></i>
+                  <h4><a href="#">By Air</a></h4>
+                  <p>The airports of Chandigarh and Pathankot on the borders of Himachal and the smaller airports of
+                    Gaggal-Kangra, Bhuntar-Kullu and Jubbarhatti-Shimla provide air connectivity to the state.</p>
+                  <p>The Pathankot and Gaggal-Kangra airport give easy access to Kangra,Dharmshala,Chamba,Hamirpur
+                    and Una,the Bhuntar-Kullu airport to Mandi, Kullu-Manali and Lahual-Spiti,and the Chandigarh
+                    and Jubbarhatti-Shimla airport to shimla,Solan,Bilaspur,Mandi and Kinnaur regions.</p>
+                  <p>. Bhuntar Airport, Manali</p>
+                  <p>. Gaggal Airport, Kangra</p>
+                  <p>. Jubbarhatti Airport, Shimla</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bxs-bus"></i>
+                  <h4><a href="#">By road</a></h4>
+                  <p>Himachal Pradesh is easily accessible by road from Chandigarh,Delhi and Punjab. Interstate bus
+                    services are available from Delhi, Chandigarh and other neighbouring cities. Within Himachal,
+                    a good public transport service and taxi services serve reach all destination in the state.</p>
+                  <p>Online Bus Booking:</p>
+                  <p>Himachal Road Transport Corporation</p>
+                  <p>Offline Bus Booking:</p>
+                  <p>Busstand </p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bxs-train"></i>
+                  <h4><a href="#">By Train</a></h4>
+                  <p>In the north, on the border with Haryana, Kalka is the major broad gauge train station that
+                    connect to shimla,Himachal Pradesh. The Kalka-Shimla train track is UNESCO World Heritage
+                    site in itself. An engineering masterpiece of the British era, the journey passes through some
+                    spectacular landscapes.</p>
+                  <p>. kalka Shimla Rail Line </p>
+                  <p>. Pathankot- Joginder Nagar Railway Line </p>
+                  <p>. Amb Una Himachal Railway line </p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+   <section id="Accommodations" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 data-aos="fade-in">Accommodations</h2>
+          <p data-aos="fade-in"> Himachal brings to you a wide range of accommodation options to choose from to make
+            sure you take home great and 'comfy' memories. From hotels to homestays and resorts to bungalows; budget
+            to luxury, pick your style of accommodation and we have it here for you. Despite the difficult terrian
+            and varying climatic conditions, Himachal is well connected by roads, railways and air. Reachyour favorite
+            destination in Himachal from anyplace.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='assets/img/services-7.jpg') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="/touristdestination">Explore Various Places</a></h5>
+                <p class="card-text">Have detailed tourism related information, history, reviews about various beautiful
+                  locations. </p>
+                <div class="read-more"><a href="/touristdestination"><i class="bi bi-arrow-right"></i> Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='assets/img/services-2.jpg') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Events</a></h5>
+                <p class="card-text">Classify places and plans for different age groups according to amount physical
+                  activity involved in exploring tourist places.</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='assets/img/services-9.jpg') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Adventure</a></h5>
+                <p class="card-text">Find best possible routes for traveling throughout whole tour using google maps
+                  services in our application.</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-left">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ url_for('static', filename='assets/img/services-3.jpg') }}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Culture & Spiritual </a></h5>
+                <p class="card-text">
+                  Himachal Pradesh is a multi-religion practising, multicultural and multilingual state.
+                  Some of the most commonly spoken languages are Hindi and the various Pahari languages.
+                  The Hindu communities residing in Himachal include the Brahmins, Rajputs, Kannets, Rathis and Kolis.</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>We are currently final year students at Baddi University. We are always trying to improve our application
+            and
+            Create more user friendly platform. Contact us if you have any suggestions for us or having any issue
+            using
+            our application. Thank you for choosing Explore Himachal.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box" data-aos="fade-up">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>Baddi University , Solan , HIMACHAL PRADESH</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <h3>We Are</h3>
+                  <p>Aseem Sharma<br>Karan Sharma <br>Archit Sharma</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>99aseem@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <form action="{{ url_for('static', filename='forms/contact.php') }}" method="post" role="form"
+              class="php-email-form w-100" data-aos="fade-up">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- ======= Analytics Section ======= -->
+    <section id="analytics" class="analytics section-bg">
+      <div class="section-title">
+        <h2>Analytics</h2>
+        <p>Analytics of Explore Himachal since 2022</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="counter green">
+              <h1 class="counter-value">{{visits}}</h1>
+              <h3>Total Visits</h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="counter red">
+              <h1 class="counter-value">{{noOfusers}}</h1>
+              <h3>Users</h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="counter orange">
+              <h1 class="counter-value">{{places}}</h1>
+              <h3>Tourist Places</h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="counter blue">
+              <h1 class="counter-value">{{plans}}</h1>
+              <h3>Plans Generated</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="" style="text-align: center;height: 275px;">
+        <img src="{{ url_for('static', filename='assets/img/hero-img2.png') }}" class="img-fluid" alt="" height="250px"
+          width="250px">
+      </div>
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6" data-aos="fade-in" style="font-family: Times New Roman;">
+            <h5>A Journey Of A Thousand Miles Begins With A Single Step</h5>
+          </div>
+        </div>
+        <!--
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      -->
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Explore Himachal</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/ -->
+        Designed by <a href="#contact">Aseem , Karan , Archit</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/jquery.ajaxchimp.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/jquery.sticky.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/slick.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/jquery.counterup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/waypoints.min.js') }}"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+</body>
+
+</html>
